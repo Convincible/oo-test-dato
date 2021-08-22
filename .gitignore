@@ -39,3 +39,5 @@ node_modules
 
 # Public output
 public
+# Local Netlify folder
+.netlify
