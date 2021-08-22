@@ -1,0 +1,6 @@
+# Basic settings
+url:                          "//dev.convincible.media"
+schema:                       "https"
+
+future: true
+unpublished: true

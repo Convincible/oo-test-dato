@@ -1,0 +1,5 @@
+# Public API keys - testing keys
+api_keys:
+   gtm:                       ""
+   wot:                       ""
+   map:                       ""

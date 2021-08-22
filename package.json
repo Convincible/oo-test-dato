@@ -1,0 +1,46 @@
+{
+	"dependencies": {
+		"autoprefixer": "~>9.0",
+		"cssnano": "~>5.0",
+		"html-minifier": "~>4.0",
+		"npm-run-all": "~>4.1",
+		"postcss": "~>8.3",
+		"postcss-cli": "~>8.3",
+		"run-for-every-file": "~>1.1",
+		"uglify-js": "~>3.13"
+	},
+	"scripts": {
+		"prod": "npm-run-all prod:* && npm-run-all transform:* && npm-run-all -p minify:*",
+		"preview": "npm-run-all preview:* && npm-run-all transform:* && npm-run-all -p minify:*",
+		"dev": "npm-run-all dev:*",
+		"test": "npm run dev:jekyll && npm run serve",
+		"prod:dato": "bundle exec dato dump",
+		"prod:jekyll": "bundle exec jekyll build",
+		"preview:dato": "bundle exec dato dump --preview",
+		"preview:jekyll": "bundle exec jekyll build --trace --verbose --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/preview.yml",
+		"dev:dato": "bundle exec dato dump",
+		"dev:jekyll": "bundle exec jekyll build --trace --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/dev.yml",
+		"transform:css": "postcss 'public/assets/css/**/*.css' --replace --no-map --use autoprefixer",
+		"minify:html": "html-minifier --file-ext html --input-dir public --output-dir public --collapse-whitespace --conservative-collapse --remove-comments --keep-closing-slash --preserve-line-breaks --minify-css true --sort-attributes --sort-class-name --minify-js true",
+		"minify:css": "postcss 'public/assets/css/**/*.css' --replace --no-map --use cssnano",
+		"minify:js": "run-for-every-file --src public/assets/js/ --file '**/*.js' --run 'uglifyjs {{src-file}} -o {{src-file}} --compress'",
+		"dato": "npm run dev:dato",
+		"jekyll": "npm run dev:jekyll",
+		"serve": "jekyll serve --no-watch --skip-initial-build --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/dev.yml"
+	},
+	"browserslist": [
+		"> 0.2% in GB",
+		"> 1%",
+		"last 2 versions"
+	],
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {},
+			"cssnano": {
+				"autoprefixer": true,
+				"discardComments": true,
+				"reduceIndents": true
+			}
+		}
+	}
+}

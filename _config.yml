@@ -1,0 +1,43 @@
+---
+title: Open Ownership
+timezone: UTC
+source:                       "source" # NO LEADING SLASH!!!
+destination:                  "public"
+collections_dir: content
+collections:
+  posts:
+    title: Posts
+    output: true
+  resources:
+    title: Resources
+    output: true
+include:
+- _redirects
+exclude:
+- "*.partial.*"
+- "*.map"
+show_warnings: false
+strict_front_matter: true
+disable_disk_cache: true
+url: https://www.openownership.org
+description: Open Ownership strengthens accountability and advances transparency in
+  company ownership
+plugins: []
+markdown: kramdown
+kramdown:
+  auto_ids: true
+  auto_id_stripping: true
+  transliterated_header_ids: true
+  auto_id_prefix: section-
+  toc_levels: 1..3
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+highlighter: rouge
+future: true

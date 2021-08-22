@@ -1,0 +1,6 @@
+# Basic settings
+url:                          "//localhost:4000"
+schema:                       "http"
+
+plugins:
+ - jekyll-debug
