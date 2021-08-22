@@ -35,7 +35,7 @@ DatoAPI::get_models
 
 # I18n
 I18n.load_path << './source/_data/i18n.yml'
-I18n.available_locales = [:en] # Override
+#I18n.available_locales = [:en] # Override
 DEFAULT_LOCALE = I18n.available_locales[0]
 
 $sitemap = {}
