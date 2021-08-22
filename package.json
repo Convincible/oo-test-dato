@@ -14,7 +14,7 @@
 		"preview": "npm-run-all preview:* && npm-run-all transform:* && npm-run-all -p minify:*",
 		"dev": "npm-run-all dev:*",
 		"test": "npm run dev:jekyll && npm run serve",
-		"prod:dato": "bundle exec dato dump && ./commit.sh",
+		"prod:dato": "bundle exec dato dump",
 		"prod:jekyll": "bundle exec jekyll build",
 		"preview:dato": "bundle exec dato dump --preview",
 		"preview:jekyll": "bundle exec jekyll build --trace --verbose --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/preview.yml",
