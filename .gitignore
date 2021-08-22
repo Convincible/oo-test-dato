@@ -29,10 +29,10 @@ spec/reports
 node_modules
 
 # Dato dumped files
-source/content/*
+#source/content/*
 #!source/content/_root/
 
-source/_data/*
+#source/_data/*
 #!source/_data/i18n.yml
 #!source/_data/menu.yml
 #!source/_data/social.yml
