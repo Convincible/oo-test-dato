@@ -2,7 +2,7 @@
 echo "Attempting to commmit files to Git..."
 
 pwd
-ls
+ls -la
 git status
 
 #git@github.com:Convincible/oo-test-dato.git
