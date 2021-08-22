@@ -1,7 +1,7 @@
 ---
 title: Implementation Guide
 locale: en
-order: 0
+order: 1
 meta:
   id: '53424611'
   locales:
