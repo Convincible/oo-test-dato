@@ -9,15 +9,7 @@ module DatoAPI
 	#
 	def self.get_models
 		@models ||= [
-			'home',
-			'activities',
-			'sectors',
-			'regions',
-			'projects',
-			'case_studies',
-			'people',
-			'offices',
-			'news'
+			'resources'
 		]
 		@model ||= @models.map { |model|
 			[model.to_sym, $dato.send(model.to_sym)]

@@ -94,21 +94,6 @@ I18n.available_locales.each do |locale|
 					frontmatter(:yaml,
 						{
 							title: handler.title(record),
-							data: {
-								photo: DatoAPI.image(record.photo),
-								role: handler.field(record, :role)
-							}.merge(
-								record.linkedin.present? ?
-								{
-									links: [
-										{
-											id: 'linkedin',
-											title: 'LinkedIn',
-											url: record.linkedin
-										}
-									]
-								} : {}
-							),
 							locale: locale.to_s,
 							order: index,
 							meta: {
@@ -118,7 +103,7 @@ I18n.available_locales.each do |locale|
 						}
 					)
 					content(
-						Jekyll::slamdown(handler.field(record, :bio))
+						Jekyll::slamdown(handler.field(record, :description))
 					)
 				end
 

@@ -1,8 +1,8 @@
 module DatoAPI
 
-	class People < Handler
+	class Resources < Handler
 
-		
+
 
 	end
 
