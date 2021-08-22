@@ -11,6 +11,7 @@ echo "Adding SSH from Environment Variables"
     mkdir -p "$dir"
     echo -e "-----BEGIN OPENSSH PRIVATE KEY-----\\n${DEPLOY_KEY//_/\\n}\\n-----END OPENSSH PRIVATE KEY-----" >> "$dir/${SITE_ID}"
     chmod og-rwx "$dir/${SITE_ID}"
+    ssh-add "$dir/${SITE_ID}"
 
     # Uncomment to debug
     #ls -la "$dir"
