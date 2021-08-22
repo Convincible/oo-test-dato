@@ -14,10 +14,12 @@ echo "Adding SSH from Environment Variables"
 
     # Init .ssh dir and expand $SSH_KEY
     mkdir -p "$dir"
-    echo -e "-----BEGIN OPENSSH PRIVATE KEY-----\\n${DEPLOY_KEY//_/\\n}\\n-----END OPENSSH PRIVATE KEY-----" >> "$dir/$repo"
+    echo -e "-----BEGIN OPENSSH PRIVATE KEY-----\\n${DEPLOY_KEY//_/\\n}\\n-----END OPENSSH PRIVATE KEY-----" > "$dir/$repo"
     chmod og-rwx "$dir/$repo"
-	#eval `ssh-agent -s`
-    #ssh-add "$dir/$repo"
+
+	# Turn on SSH agent
+	eval `ssh-agent -s`
+    ssh-add "$dir/$repo"
 
 	# Update config with alias
 	touch "$dir/config"
@@ -31,6 +33,9 @@ echo "Adding SSH from Environment Variables"
     # Add host keys, comment out if not needed
     #ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 #fi
+
+echo "TEST SSH"
+ssh -T git@github.com
 
 
 echo "CURRENT WORKING DIRECTORY"
@@ -46,6 +51,7 @@ git status
 
 echo "ADD ORIGIN"
 git remote add origin "git@github.com-$repo:$owner/$repo.git"
+git remote set-url origin "git@github.com-$repo:$owner/$repo.git"
 
 echo "CONFIGURE GIT"
 git config user.email "development@convincible.media"
