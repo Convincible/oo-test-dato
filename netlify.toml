@@ -1,0 +1,35 @@
+# Global settings applied to the whole site.
+#
+# “base” is the directory to change to before starting build. If you set base:
+#        that is where we will look for package.json/.nvmrc/etc, not repo root!
+# “command” is your build command.
+# “publish” is the directory to publish (relative to the root of your repo).
+
+[build]
+  base    = ""
+  command = "npm run prod"
+  publish = "public"
+
+# Production context: All deploys to the main
+# repository branch will inherit these settings.
+[context.production.environment]
+  JEKYLL_ENV = "production"
+  NODE_ENV = "production"
+
+# Deploy Preview context: All Deploy Previews
+# will inherit these settings.
+[context.deploy-preview.environment]
+  JEKYLL_ENV = "development"
+  NODE_ENV = "production"
+
+# Branch deploy context: All deploys that are not in
+# an active Deploy Preview will inherit these settings.
+[context.branch-deploy.environment]
+  JEKYLL_ENV = "development"
+  NODE_ENV = "production"
+
+[context.dev]
+  command = "npm run preview"
+  [context.dev.environment]
+    JEKYLL_ENV = "development"
+    NODE_ENV = "production"
