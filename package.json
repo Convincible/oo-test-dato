@@ -10,8 +10,8 @@
 		"uglify-js": "~>3.13"
 	},
 	"scripts": {
-		"prod": "npm-run-all prod:* && npm-run-all transform:* && npm-run-all -p minify:*",
-		"preview": "npm-run-all preview:* && npm-run-all transform:* && npm-run-all -p minify:*",
+		"prod": "npm-run-all prod:*",
+		"preview": "npm-run-all preview:*",
 		"dev": "npm-run-all dev:*",
 		"test": "npm run dev:jekyll && npm run serve",
 		"prod:dato": "bundle exec dato dump",
@@ -20,10 +20,6 @@
 		"preview:jekyll": "bundle exec jekyll build --trace --verbose --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/preview.yml",
 		"dev:dato": "bundle exec dato dump",
 		"dev:jekyll": "bundle exec jekyll build --trace --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/dev.yml",
-		"transform:css": "postcss 'public/assets/css/**/*.css' --replace --no-map --use autoprefixer",
-		"minify:html": "html-minifier --file-ext html --input-dir public --output-dir public --collapse-whitespace --conservative-collapse --remove-comments --keep-closing-slash --preserve-line-breaks --minify-css true --sort-attributes --sort-class-name --minify-js true",
-		"minify:css": "postcss 'public/assets/css/**/*.css' --replace --no-map --use cssnano",
-		"minify:js": "run-for-every-file --src public/assets/js/ --file '**/*.js' --run 'uglifyjs {{src-file}} -o {{src-file}} --compress'",
 		"dato": "npm run dev:dato",
 		"jekyll": "npm run dev:jekyll",
 		"serve": "jekyll serve --no-watch --skip-initial-build --config _config.yml,source/_config/jekyll/test_keys.yml,source/_config/jekyll/dev.yml"
