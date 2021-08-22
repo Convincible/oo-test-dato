@@ -1,6 +1,41 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# Essential
+.git
+.env
 
-public/
+# Windows
+*.lnk
+*.db
+*.ini
+
+# Temp/cache/logs
+.jekyll-metadata
+.sass-cache
+.jekyll-cache
+.rspec_status
+*.log
+*.map
+*/tmp
+*/cache
+
+# Working files/dirs
+.bundle
+.yardoc
+_yardoc
+coverage
+doc
+pkg
+spec/reports
+.vscode
+node_modules
+
+# Dato dumped files
+source/content/*
+#!source/content/_root/
+
+source/_data/*
+#!source/_data/i18n.yml
+#!source/_data/menu.yml
+#!source/_data/social.yml
+
+# Public output
+public
