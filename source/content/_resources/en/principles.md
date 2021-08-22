@@ -6,7 +6,6 @@ meta:
   id: '53438763'
   locales:
   - en
-  - es
 ---
 
 These are the principles
