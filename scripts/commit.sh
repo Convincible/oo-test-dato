@@ -3,6 +3,8 @@ echo "Attempting to commmit files to Git..."
 
 pwd
 ls -la
+git config -l
+git remote -v
 git status
 
 #git@github.com:Convincible/oo-test-dato.git
