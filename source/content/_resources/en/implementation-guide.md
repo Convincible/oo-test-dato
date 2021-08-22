@@ -6,6 +6,7 @@ meta:
   id: '53424611'
   locales:
   - en
+  - es
 ---
 
 This is the implementation guide.

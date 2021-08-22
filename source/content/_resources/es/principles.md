@@ -1,6 +1,6 @@
 ---
 title: Principles
-locale: en
+locale: es
 order: 0
 meta:
   id: '53438763'
